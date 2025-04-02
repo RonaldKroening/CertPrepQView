@@ -13,11 +13,29 @@ const QuestionViewer = ({ questions }) => {
     setCurrentIndex((prev) => (prev - 1 + questions.length) % questions.length);
   };
 
+  const handleQuestionSelect = (e) => {
+    setCurrentIndex(Number(e.target.value));
+  };
+
   return (
     <div className="p-4 md:p-6 bg-white rounded-lg shadow-md w-full h-full">
-      <span className="inline-block p-2 md:p-3 bg-white font-bold rounded-lg shadow-md text-sm md:text-base mb-4">
-        Question {currentQuestion.question_number} of {questions.length}
-      </span>
+      <div className="flex justify-between items-center mb-4">
+        <select
+          value={currentIndex}
+          onChange={handleQuestionSelect}
+          className="p-2 bg-white border border-gray-300 rounded-md shadow-sm text-sm md:text-base"
+        >
+          {questions.map((q, index) => (
+            <option key={q.question_number} value={index}>
+              Question {q.question_number}
+            </option>
+          ))}
+        </select>
+        
+        <span className="inline-block p-2 md:p-3 bg-white font-bold rounded-lg shadow-md text-sm md:text-base">
+          Question {currentQuestion.question_number} of {questions.length}
+        </span>
+      </div>
       
       <div className='flex lg:flex-row gap-4'>
         <div className="p-2 md:p-4 bg-gray-50 rounded-lg flex-1">
