@@ -14,7 +14,7 @@ const QuestionViewer = ({ questions }) => {
   };
 
   return (
-    <div className="p-4 md:p-6 bg-white rounded-lg shadow-md max-w-full mx-auto">
+    <div className="p-4 md:p-6 bg-white rounded-lg shadow-md w-full h-full">
       <span className="inline-block p-2 md:p-3 bg-white font-bold rounded-lg shadow-md text-sm md:text-base mb-4">
         Question {currentQuestion.question_number} of {questions.length}
       </span>
