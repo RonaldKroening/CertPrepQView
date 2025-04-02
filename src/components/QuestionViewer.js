@@ -20,7 +20,6 @@ const QuestionViewer = ({ questions }) => {
       </span>
       
       <div className='flex lg:flex-row gap-4'>
-        {/* Question and Choices */}
         <div className="p-2 md:p-4 bg-gray-50 rounded-lg flex-1">
           <h3 className="text-base md:text-lg font-medium text-gray-800 mb-3">{currentQuestion.question}</h3>
           <ul className="space-y-2">
@@ -31,15 +30,13 @@ const QuestionViewer = ({ questions }) => {
             ))}
           </ul>
         </div>
-        
-        {/* Explanation - always visible */}
+    
         <div className="p-3 md:p-4 bg-green-50 rounded-lg border border-green-100 flex-1">
           <h4 className="font-semibold text-green-800 mb-2 text-sm md:text-base">Explanation:</h4>
           <p className="text-left text-gray-700 text-sm md:text-base">{currentQuestion.explanation}</p>
         </div>
       </div>
       
-      {/* Navigation Buttons */}
       <div className="flex flex-col sm:flex-row justify-between items-center mt-4 gap-2">
         <button
           onClick={handlePrev}
